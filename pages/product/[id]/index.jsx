@@ -15,10 +15,12 @@ function Descriptor({ name }) {
 	return <div className='text-xs font-semibold text-gray-500 text-left'>{name}</div>;
 }
 
-export default function ProductByID({ product: { id, image, name, price, categories, slug }, blurhash }) {
+export default function ProductByID({ product, blurhash }) {
+	if (product === undefined) return <div>Product not found</div>;
+
 	const dispatch = useDispatch();
 	const cart = useSelector((state) => selectCart(state));
-
+	const { image, name, price, categories, slug } = product;
 	const inCart = checkIfInCart(cart, slug);
 
 	const [description, setDescription] = useState([]);
@@ -82,7 +84,7 @@ export default function ProductByID({ product: { id, image, name, price, categor
 export const getStaticProps = async (context) => {
 	const { products } = await rfetch({
 		query: `query {
-        products(slug: "${context.params.id}") {
+        products(slug: "${context.params?.id}") {
           name
           id
           image
@@ -112,7 +114,7 @@ export const getStaticPaths = async () => {
         }
       }`,
 	});
-	const p = products.map((product) => ({ params: { id: product.slug.toString() } }));
+	const p = products.map((product) => ({ params: { id: product.slug } }));
 	return {
 		paths: p,
 		fallback: true,
