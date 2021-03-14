@@ -1,0 +1,49 @@
+html {
+	overflow-y: scroll;
+}
+::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+}
+::-webkit-scrollbar-thumb {
+	background: #111827;
+	border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: linear-gradient(13deg, #666666 14%, #666666 64%);
+}
+::-webkit-scrollbar-track {
+	background: #525252;
+	border-radius: 0px;
+	box-shadow: inset 7px 10px 12px #f0f0f0;
+}
+
+/* NProgress addon */
+#nprogress {
+	pointer-events: none;
+}
+#nprogress .bar {
+	background: rgb(167, 139, 250);
+
+	position: fixed;
+	z-index: 1031;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 5px;
+}
+/* Fancy blur effect */
+#nprogress .peg {
+	display: block;
+	position: absolute;
+	right: 0px;
+	width: 100px;
+	height: 100%;
+	box-shadow: 0 0 10px rgb(167, 139, 250), 0 0 5px rgb(167, 139, 250);
+	opacity: 1;
+
+	-webkit-transform: rotate(3deg) translate(0px, -4px);
+	-ms-transform: rotate(3deg) translate(0px, -4px);
+	transform: rotate(3deg) translate(0px, -4px);
+}
