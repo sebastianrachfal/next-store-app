@@ -15,7 +15,7 @@ function Descriptor({ name }) {
 	return <div className='text-xs font-semibold text-gray-500 text-left'>{name}</div>;
 }
 
-export default function ProductByID({ product, blurhash }) {
+export default function Index({ product, blurhash }) {
 	if (product === undefined) return <div>Product not found</div>;
 
 	const dispatch = useDispatch();
