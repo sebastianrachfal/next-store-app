@@ -20,7 +20,7 @@ export default function Cart({ products }) {
 					<div className='flex-1'>
 						<table className='w-full text-sm lg:text-base rounded-lg overflow-hidden' cellSpacing='0'>
 							<thead>
-								<tr className='h-12 bg-purple-600 text-white p-2 w-full '>
+								<tr className=' h-12 bg-purple-500 text-white p-2 w-full '>
 									<th className='text-center'>Product</th>
 									<th className='text-center'>
 										<span className='lg:hidden' title='Quantity'>
