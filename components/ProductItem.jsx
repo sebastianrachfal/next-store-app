@@ -33,8 +33,8 @@ export default memo(function ProductItem({ data: { image, name, categories, pric
 					</div>
 					<div className='flex flex-col flex-1 p-5 items-start justify-between'>
 						<div className='flex flex-col w-full items-start'>
-							<h2 className='text-xl lg:text-lg xl:text-xl whitespace-nowrap'>{name}</h2>
-							<div className='text-gray-400 md:text-sm xl:text-base'>
+							<h2 className='text-lg text-left font-semibold xl:text-2xl'>{name}</h2>
+							<div className='hidden sm:block text-gray-400 md:text-sm xl:text-base'>
 								{categories.map((category) => category.name).join(', ')}
 							</div>
 						</div>

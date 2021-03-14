@@ -12,7 +12,7 @@ export default function Header() {
 		<header className='z-50 fixed text-gray-700 body-font w-full'>
 			<div className='flex flex-wrap p-5 mx-auto justify-between flex-row bg-gray-900'>
 				<div className='inline-flex items-center flex-1'>
-					<h1 className='ml-5 font-semibold tracking-tighter transition duration-1000 ease-in-out transform text-white lg:text-2xl text-bold lg:mr-8'>
+					<h1 className='md:ml-5 font-semibold tracking-tighter transition duration-1000 ease-in-out text-lg transform text-white lg:text-2xl text-bold lg:mr-8'>
 						<Link href='/'>
 							<a>
 								<span className='text-purple-400'>#</span>Store
@@ -23,7 +23,7 @@ export default function Header() {
 				<div className='flex-1 flex'>
 					<div className='relative mx-auto text-white'>
 						<input
-							className='lg:text-lg border-2 placeholder-gray-300 border-gray-800 bg-gray-500 h-10 px-5 pr-32 rounded-lg text-sm focus:outline-none'
+							className='lg:text-lg border-2 placeholder-gray-300 border-gray-800 bg-gray-500 h-10 px-2 md:px-5 pr-6 lg:pr-32 rounded-lg text-sm focus:outline-none'
 							name='search'
 							placeholder='Search'
 							autoComplete='off'
@@ -50,7 +50,7 @@ export default function Header() {
 
 				<nav className='flex-1 inline-flex items-center justify-end text-base md:ml-auto '>
 					<Link href='/cart'>
-						<a className='mr-5 lg:text-xl text-sm font-semibold text-white relative'>
+						<a className='md:mr-5 lg:text-xl text-base font-semibold text-white relative'>
 							cart
 							<span className='absolute flex justify-center items-center right-full top-0 rounded-full bg-red-600 w-4 h-4 top right p-0 m-0 text-white font-mono text-sm leading-tight text-center'>
 								<span>{cart.length}</span>
