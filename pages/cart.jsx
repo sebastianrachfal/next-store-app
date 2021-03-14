@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { selectCart, setAmountInCart, removeFromCart, clearCart } from '../lib/slices/userSlice';
+import { selectCart, setAmountInCart, removeFromCart, clearCart, setCart } from '../lib/slices/userSlice';
 import PRODUCT_QUERY from '../lib/productQuery';
 import rfetch from '../lib/fetch';
 import { getProductsFromCart, calculatePriceFromProductList } from '../lib/utils';
@@ -58,9 +59,11 @@ export default function Cart({ products }) {
 											<input
 												type='number'
 												value={amount}
+												style={{ caretColor: 'black' }}
 												className='m-2 border border-gray-400 rounded-lg w-20 h-10 font-semibold text-center text-gray-700 bg-gray-100 outline-none focus:outline-none hover:text-black focus:text-black'
 												onChange={(e) => {
-													if (e.target.value > 0) {
+													e.target.value = +e.target.value;
+													if (e.target.value > -1) {
 														dispatch(
 															setAmountInCart({
 																current: cart,
@@ -127,7 +130,7 @@ export default function Cart({ products }) {
 														d='M527.9 32H48.1C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48.1 48h479.8c26.6 0 48.1-21.5 48.1-48V80c0-26.5-21.5-48-48.1-48zM54.1 80h467.8c3.3 0 6 2.7 6 6v42H48.1V86c0-3.3 2.7-6 6-6zm467.8 352H54.1c-3.3 0-6-2.7-6-6V256h479.8v170c0 3.3-2.7 6-6 6zM192 332v40c0 6.6-5.4 12-12 12h-72c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h72c6.6 0 12 5.4 12 12zm192 0v40c0 6.6-5.4 12-12 12H236c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h136c6.6 0 12 5.4 12 12z'
 													/>
 												</svg>
-												<span className='ml-2 mt-5px'>Procceed to checkout</span>
+												<span className='ml-2 mt-5px'>Proceed to checkout</span>
 											</button>
 										</Link>
 									</div>
